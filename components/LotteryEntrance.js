@@ -16,8 +16,11 @@ export default function LotteryEntrance() {
 
     const dispatch = useNotification()
 
-    const { runContractFunction: enterRaffle, isLoading,
-        isFetching } = useWeb3Contract({
+    const {
+        runContractFunction: enterRaffle,
+        isLoading,
+        isFetching,
+    } = useWeb3Contract({
         abi: abi,
         contractAddress: raffleAddress,
         functionName: "enterRaffle",
@@ -109,6 +112,7 @@ export default function LotteryEntrance() {
                     <div>Entrance Fee: {ethers.utils.formatUnits(entranceFee, "ether")} ETH</div>
                     <div>The current number of players is: {numPlayers}</div>
                     <div>The most previous winner was: {recentWinner}</div>
+                    <div>WHAAATTT UUUUPP</div>
                 </div>
             ) : (
                 <div>No Raffle Address Detected!</div>
